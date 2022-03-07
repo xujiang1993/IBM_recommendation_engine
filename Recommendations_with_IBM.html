@@ -14544,15 +14544,14 @@ The top 10 recommendations for user 20 are the following article names:
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">arts_by_arts</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">,</span><span class="n">df_content</span><span class="o">=</span><span class="n">df_content</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    This function is to preprocess the articles content data and create a ready-to-use dataframe</span>
+<span class="sd">    This function is to preprocess the articles content data and article interaction data to create </span>
+<span class="sd">    a ready-to-use article-by-article similarity matrix</span>
 <span class="sd">    </span>
 <span class="sd">    INPUT:</span>
-<span class="sd">    df - pandas dataframe describe user interaction with th articles</span>
-<span class="sd">    df_content - pandas dataframe describe articles on the platforme</span>
+<span class="sd">    df - pandas dataframe describe user interaction with articles</span>
+<span class="sd">    df_content - pandas dataframe describe articles on the platform</span>
 <span class="sd">    OUTPUT:</span>
-<span class="sd">    df_total - pandas dataframe contains all articles in the platforme</span>
-<span class="sd">    article_content -  pandas dataframe describe the content of each</span>
-<span class="sd">                       article on the plateforme</span>
+<span class="sd">    article_sim_df - pandas dataframe, articles by articles similarity matrix</span>
 
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">corpus</span> <span class="o">=</span> <span class="p">[]</span>
@@ -14590,10 +14589,14 @@ The top 10 recommendations for user 20 are the following article names:
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_content_recs</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">sim_threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function is used to make recommendation based on the content similarity</span>
 <span class="sd">    INPUT:</span>
-<span class="sd">    </span>
+<span class="sd">    user_id (float) - input user id</span>
+<span class="sd">    m (int) - the number of the recommendations</span>
+<span class="sd">    sim_threshold (float from 0 to 1) - this is the threhold for the content similarity</span>
 <span class="sd">    OUTPUT:</span>
-<span class="sd">    </span>
+<span class="sd">    recs (list) - recommended article id</span>
+<span class="sd">    rec_names (list) - the recommended article names</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">arts_ids</span><span class="p">,</span><span class="n">arts_names</span> <span class="o">=</span> <span class="n">get_user_articles</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">recs</span> <span class="o">=</span> <span class="p">[]</span>
