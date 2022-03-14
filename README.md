@@ -27,3 +27,5 @@ This work uses python and the used python packages are given below:
 This project also developed a simple web app for content based recommendation engine. The app can be access by clicking: https://recommendation-engine-xu.herokuapp.com/
 
 The detail of how to create a heroku app can follow my medium blog: https://medium.com/@xujiang1993/how-to-deploy-your-ml-model-on-web-for-free-39f273ea818a
+
+![This is web home page](pic/web_interface.GIF)
