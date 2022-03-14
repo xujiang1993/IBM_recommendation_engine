@@ -23,3 +23,6 @@ This work uses python and the used python packages are given below:
 * sklearn
 * nltk
 
+## Web App
+This project also developed a simple web app for content based recommendation engine. The app can be access by clicking: https://recommendation-engine-xu.herokuapp.com/
+
